@@ -1,0 +1,61 @@
+{
+    "private": true,
+    "theia": {
+        "frontend": {
+            "config": {
+                "applicationName": "Theia OCaml",
+                "preferences": {
+                    "files.enableTrash": false
+                }
+            }
+        }
+    },
+    "dependencies": {
+        "@theia/editor-preview": "next",
+        "@theia/file-search": "next",
+        "@theia/getting-started": "next",
+        "@theia/git": "next",
+        "@theia/markers": "next",
+        "@theia/messages": "next",
+        "@theia/navigator": "next",
+        "@theia/outline-view": "next",
+        "@theia/plugin-dev": "next",
+        "@theia/plugin-ext": "next",
+        "@theia/plugin-ext-vscode": "next",
+        "@theia/preferences": "next",
+        "@theia/preview": "next",
+        "@theia/search-in-workspace": "next",
+        "@theia/terminal": "next",
+        "@theia/vsx-registry": "next"
+    },
+    "devDependencies": {
+      "@theia/cli": "next"
+    },
+    "scripts": {
+      "prepare": "yarn run clean && yarn build && yarn run download:plugins",
+      "clean": "theia clean",
+      "build": "theia build --mode development",
+      "start": "theia start --plugins=local-dir:plugins",
+      "download:plugins": "theia download:plugins"
+    },
+    "theiaPluginsDir": "plugins",
+    "theiaPlugins": {
+      "vscode-builtin-extensions-pack": "https://open-vsx.org/api/eclipse-theia/builtin-extension-pack/1.64.0-next.68976705968/file/eclipse-theia.builtin-extension-pack-1.64.0-next.68976705968.vsix",
+      "vscode-ocaml-platform": "https://open-vsx.org/api/ocamllabs/ocaml-platform/1.8.0/file/ocamllabs.ocaml-platform-1.8.0.vsix"
+    },
+    "theiaPluginsExcludeIds": [
+      "ms-vscode.js-debug-companion",
+      "vscode.extension-editing",
+      "vscode.git",
+      "vscode.git-base",
+      "vscode.diff",
+      "vscode.ipynb",
+      "vscode.markdown-math",
+      "vscode.dart",
+      "vscode.julia",
+      "vscode.git-ui",
+      "vscode.github",
+      "vscode.github-authentication",
+      "vscode.microsoft-authentication"
+    ]
+}
